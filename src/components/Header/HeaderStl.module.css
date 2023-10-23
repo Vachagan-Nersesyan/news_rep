@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header_comp {
+    padding: 1em;
+    background-color: #33383E;
+}
+
+.header_comp_container{
+    margin:  0 auto;
+    width: 90%;
+}
+
+.header_comp_container ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header_comp_container ul li{
+    padding-right: 2em;
+    list-style-type: none;
+}
+
+.header_comp_container ul li a{
+    text-decoration: none;
+}
+
+.header_comp_container ul li:first-child{
+    font-size: 2em;
+}
+
+
+.header_comp_container ul li a{
+    color: white;
+}
