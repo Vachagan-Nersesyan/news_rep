@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from './HeaderStl.module.css'
 
+import DropDownComp from '../DropdownComp'
+
 
 
 const HeaderComp: React.FC<OwnProps> = () => {
@@ -18,6 +20,9 @@ const HeaderComp: React.FC<OwnProps> = () => {
                         <a href="#">Link</a>
                     </li>
                 </ul>
+                <div>
+                    <DropDownComp />
+                </div>
             </div>
 
         </div>

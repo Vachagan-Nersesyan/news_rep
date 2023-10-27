@@ -6,6 +6,10 @@
 .header_comp_container{
     margin:  0 auto;
     width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .header_comp_container ul{

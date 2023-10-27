@@ -18,9 +18,9 @@ const CardComp: React.FC<OwnProps> = ({ cardInfo }) => {
 
     const cardData =  cardInfo.map((val) => {
         return (
-            <div key={val.id}>
+            <div key={val.id} className={styles.card_content_item}>
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={val.picture} />
+                    <Card.Img variant="top" src={val.picture} className={styles.img_card} />
                     <Card.Body>
                         <Card.Title>{val.title}</Card.Title>
                         <Card.Text>
@@ -37,7 +37,7 @@ const CardComp: React.FC<OwnProps> = ({ cardInfo }) => {
     })
 
     return (
-       <div>
+       <div className={styles.card_content}>
             {
                 cardData
             }
