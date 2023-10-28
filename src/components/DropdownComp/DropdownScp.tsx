@@ -15,9 +15,10 @@ const DropDownComp: React.FC<OwnProps> = () => {
                 {
                     showDrowdownContent
                         ?
-                        <FaAngleDown />
-                        :
                         <FaAngleUp />
+                        :
+                        <FaAngleDown />
+
                 }
             </div>
             {

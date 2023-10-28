@@ -2,10 +2,12 @@ import React from 'react'
 import styles from './HeaderStl.module.css'
 
 import DropDownComp from '../DropdownComp'
+import SearchScp from '../SearchComp/SearchScp'
+import { SearchAutoCompleteType } from '../AppComp/AppScp'
 
 
 
-const HeaderComp: React.FC<OwnProps> = () => {
+const HeaderComp: React.FC<OwnProps> = ({ searchAutoComplete,searchFunc }) => {
     return (
         <div className={styles.header_comp}>
             <div className={styles.header_comp_container}>
@@ -21,6 +23,9 @@ const HeaderComp: React.FC<OwnProps> = () => {
                     </li>
                 </ul>
                 <div>
+                    <SearchScp searchFunc={searchFunc} searchAutoComplete={searchAutoComplete} />
+                </div>
+                <div>
                     <DropDownComp />
                 </div>
             </div>
@@ -31,4 +36,7 @@ const HeaderComp: React.FC<OwnProps> = () => {
 
 export default HeaderComp
 
-type OwnProps = {}
+type OwnProps = {
+    searchAutoComplete: Array<SearchAutoCompleteType>,
+    searchFunc: ( str: string) => void
+}

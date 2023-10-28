@@ -1,0 +1,9 @@
+.search_content{
+    display: flex;
+    justify-content: center;
+}
+
+.search_content_in_item_1_in_1_item{
+    background-color: red;
+    position: absolute;
+}
