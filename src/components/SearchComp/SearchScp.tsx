@@ -3,10 +3,16 @@ import styles from './SearchStl.module.css'
 import { SearchAutoCompleteType } from '../AppComp/AppScp'
 
 
-const SearchScp: React.FC<OwnProps> = ({ searchAutoComplete, searchFunc }) => {
+const SearchScp: React.FC<OwnProps> = ({ searchAutoComplete }) => {
 
     const [inpDrpShow, setInpDrpShow] = useState<boolean>(false)
 
+
+    const [itemsArr, setItemsArr] = useState<Array<SearchAutoCompleteType>>(searchAutoComplete)
+
+    const searchFunc: (str: string) => void = (str) => {
+        setItemsArr(searchAutoComplete.filter((val) => val.text.includes(str)).sort(function(a, b){return b.rating - a.rating}))
+    }
 
     return (
         <div className={styles.search_content}>
@@ -17,7 +23,7 @@ const SearchScp: React.FC<OwnProps> = ({ searchAutoComplete, searchFunc }) => {
                         ?
                         <div className={styles.search_content_in_item_1_in_1_item}>
                             {
-                                searchAutoComplete.map((val) => {
+                                itemsArr.map((val) => {
                                     return (
                                         <div className={styles.search_content_in_item_1_in_1_item_itm}>
                                             {val.text}
@@ -43,6 +49,4 @@ export default SearchScp
 
 type OwnProps = {
     searchAutoComplete: Array<SearchAutoCompleteType>,
-    searchFunc: ( str: string) => void
-
 }

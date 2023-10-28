@@ -81,15 +81,11 @@ const App: React.FC<OwnProps> = () => {
         },
     ]
 
-    const [itemsArr, setItemsArr] = useState<Array<SearchAutoCompleteType>>(searchAutoComplete)
-
-    const searchFunc: (str: string) => void = ( str) => {
-        setItemsArr(searchAutoComplete.filter((val) => val.text.includes(str)))
-    }
+    
 
     return (
         <>
-            <HeaderComp searchFunc={searchFunc} searchAutoComplete={itemsArr} />
+            <HeaderComp searchAutoComplete={searchAutoComplete} />
             <CardComp cardInfo={cardInfo} />
         </>
     )
