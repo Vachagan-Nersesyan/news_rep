@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react'
 
 const TextComp: React.FC = () => {
 
-    const [status, setStatus] = useState<string>('')
+    const [status, setStatus] = useState<StatusType>({
+        author: '',
+        content: ''
+    })
 
 
     useEffect(() => {
@@ -12,7 +15,11 @@ const TextComp: React.FC = () => {
         const fetchData = async () => {
             const data = await fetch('https://api.quotable.io/random')
             let response = await data.json();
-            setStatus(response.content)
+            console.log(response)
+            setStatus({
+                author: response.author,
+                content: response.content
+            })
         }
 
         fetchData();
@@ -22,10 +29,18 @@ const TextComp: React.FC = () => {
 
     return (
         <div>
-            {status}
+            {status.author}
+            {status.content}
+
 
         </div>
     )
 }
 
 export default TextComp
+
+
+type StatusType = {
+    author: string,
+    content: string
+}
