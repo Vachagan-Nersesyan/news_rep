@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styles from './AppStl.module.css'
 
 import HeaderComp from '../Header'
 import CardComp from '../CardComp'
-
+import Test from '../../Test'
+import TextComp from '../../TextComp'
 
 const App: React.FC<OwnProps> = () => {
 
@@ -40,53 +41,55 @@ const App: React.FC<OwnProps> = () => {
 
     let searchAutoComplete: Array<SearchAutoCompleteType> = [
         {
-            id : 0,
+            id: 0,
             text: 'Hello',
             rating: 0.3
         },
         {
-            id : 1,
+            id: 1,
             text: 'test',
             rating: 0.5
         },
         {
-            id : 2,
+            id: 2,
             text: 'bye',
             rating: 1
         },
         {
-            id : 3,
+            id: 3,
             text: 'how are you',
             rating: 0.2
         },
         {
-            id : 4,
+            id: 4,
             text: 'goodbye',
             rating: 0.9
         },
         {
-            id : 5,
+            id: 5,
             text: 'clock',
             rating: 0.1
         },
         {
-            id : 6,
+            id: 6,
             text: 'table',
             rating: 0.2
         },
         {
-            id : 7,
+            id: 7,
             text: 'glass',
             rating: 0.6
         },
     ]
 
-    
+
 
     return (
         <>
             <HeaderComp searchAutoComplete={searchAutoComplete} />
             <CardComp cardInfo={cardInfo} />
+            <Test />
+            <TextComp />
         </>
     )
 }
@@ -96,7 +99,7 @@ export default App
 type OwnProps = {}
 
 export type SearchAutoCompleteType = {
-    id : number,
+    id: number,
     text: string,
     rating: number
 }
